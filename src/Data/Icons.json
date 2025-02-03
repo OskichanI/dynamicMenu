@@ -1,0 +1,26 @@
+{
+  "menu": {
+    "chat": "ui_cha_main",
+    "configurator": "ui_ava_main",
+    "collections": "ui_col_main",
+    "settings": "ui_opt_main",
+    "coin": "ui_coin_padelCoin"
+  },
+  "configurator": {
+    "male": "ava_men_sex",
+    "female": "ava_fem_sex",
+    "head": "ava_head",
+    "outfit": "ava_outfit",
+    "accessory": "ava_acc",
+    "skin": "ava_colorPiel_mobile",
+    "hair": "ava_colorPelo_mobile",
+    "submit": "ava_cancelar_mobile",
+    "cancel": "ava_aplicar_mobile"
+  },
+  "collections": {
+    "floors": "col_floor",
+    "trophies": "col_trophy",
+    "paintings": "col_frame",
+    "courts": "col_field"
+  }
+}

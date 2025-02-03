@@ -1,0 +1,505 @@
+.configurator {
+  width: 900px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 580px;
+  opacity: 0.99;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3 ease-in-out;
+  z-index: 2;
+}
+
+.configurator .container {
+  background-color: var(--color-sec-1);
+  border: 2px solid var(--color-pri-1);
+  border-radius: var(--modal-border-radius);
+  z-index: 0;
+  display: flex;
+  padding: 35px;
+  height: 580px;
+  justify-content: space-between;
+}
+
+.configurator .container .subcontainer {
+  height: 100%;
+}
+
+.configurator .container .subcontainer:nth-child(1) {
+  width: 400px;
+  flex: 0 0 400px;
+}
+
+.configurator .container .subcontainer:nth-child(3) {
+  width: 70px;
+  flex: 0 0 70px;
+}
+
+.configurator .distribute {
+  display: flex;
+  justify-content: space-between;
+}
+
+.configurator .name {
+  background: var(--color-sec-2);
+  border-radius: var(--border-radius);
+  padding: 10px 17px;
+}
+
+.configurator .modules {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.configurator .up {
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25),
+    inset 0px 1px 3px rgba(255, 255, 255, 0.25);
+}
+
+.configurator .down {
+  box-shadow: inset 0px -5px 15px rgba(0, 0, 0, 0.25),
+    0px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* TABS */
+.configurator .wrapper-tabs {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 35px);
+  margin: 0 auto;
+}
+
+.configurator .meta-tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.configurator .meta-tabs > * {
+  flex: 1; /*Same width*/
+}
+
+.configurator .meta-tabs::before,
+.meta-tabs::after {
+  content: "";
+  display: table;
+}
+.configurator .meta-tabs::after {
+  clear: both;
+}
+.configurator .meta-tab {
+  display: block;
+  float: left;
+}
+.configurator .meta-tab-switch {
+  display: none;
+}
+.configurator .tab-label {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-sec-1);
+  cursor: pointer;
+  margin-top: 2px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25),
+    inset 0px 1px 3px rgba(255, 255, 255, 0.25);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.configurator .tab-label img {
+  opacity: 0.25;
+  width: 39px;
+}
+
+.configurator .tab-label img:hover {
+  opacity: 0.55;
+}
+
+.configurator .tab-content {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  padding: 0 0 17px 17px;
+  background-color: var(--color-sec-2);
+  height: calc(100% - 90px);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  opacity: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.configurator .meta-tab-switch:checked + .tab-label {
+  background-color: var(--color-sec-2);
+  margin-top: 3px;
+  box-shadow: inset 10px 10px 15px rgba(0, 0, 0, 0.35),
+    0px -1px 2px rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+
+.configurator .meta-tab-switch:checked + .tab-label img {
+  opacity: 1;
+}
+
+.configurator .meta-tab-switch:checked + label + .tab-content {
+  z-index: 2;
+  opacity: 1;
+}
+
+.configurator .name input {
+  background: var(--color-sec-2);
+  border-width: 0;
+  color: var(--color-bas-1);
+  font-size: var(--font-size);
+  width: 10em;
+}
+
+.configurator .name input:focus,
+.configurator .name input:focus {
+  outline: none;
+}
+
+.configurator button {
+  background: var(--color-sec-1);
+  border-width: 0;
+  border-radius: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.configurator button img {
+  width: 39px;
+  opacity: 0.25;
+}
+
+.configurator .button:hover img {
+  opacity: 0.55;
+}
+.configurator .button.active img {
+  opacity: 1;
+}
+
+.configurator .button-m {
+  width: 60px;
+  height: 60px;
+}
+
+.configurator .button-l {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 14px;
+}
+
+.configurator .button-l:last-child {
+  margin-bottom: 0;
+}
+
+.configurator .button-x {
+  width: 75px;
+  height: 75px;
+}
+
+.configurator .button-action {
+  background: var(--color-pri-2);
+  font-size: var(--font-size);
+}
+
+.configurator .button-selecter {
+  float: left;
+  margin: 17px 17px 0 0;
+}
+
+.configurator .button-selecter img {
+  width: 90px;
+  height: auto;
+  opacity: 0.2;
+}
+
+.configurator .button-selecter:hover img {
+  opacity: 0.5;
+}
+
+.configurator .button-selecter img.active {
+  opacity: 1;
+}
+
+.configurator button:active {
+  scale: 0.95;
+}
+
+.configurator button span {
+  width: 50px;
+  border-radius: 15px;
+  height: 50px;
+}
+
+.configurator button.button-color,
+.configurator button.button-color-skin,
+.configurator button.button-color-hair {
+  float: left;
+  margin: 14.5px 14px 0 0;
+}
+
+.configurator button.button-color.active,
+.configurator button.button-color-skin.active,
+.configurator button.button-color-hair.active {
+  border: 1px solid var(--color-pri-1);
+}
+
+.configurator .tab-content::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.configurator .tab-content::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+.configurator .tab-content::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+.configurator .tab-content::-webkit-scrollbar:increment,
+.configurator .tab-content::-webkit-scrollbar-button {
+  display: none;
+}
+.configurator .tab-content::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  /* border: 2px solid #000000; */
+}
+.configurator .tab-content::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/*-------------------*/
+/*-------------------*/
+/*-- MEDIA QUERIES --*/
+/*-------------------*/
+/*-------------------*/
+
+/*---------------*/
+/*-- LANDSCAPE --*/
+/*---------------*/
+
+/* @media only screen and (min-width:801px) and (max-width:899px) and (orientation: landscape) {
+      .configurator{
+      width: 750px;
+      height: 485px;
+    }
+    .configurator .container{
+      max-height: 485px;
+    }
+  } */
+
+@media only screen and (max-device-width: 899px) and (orientation: landscape) {
+  .configurator {
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    -ms-transform: translate(0);
+    transform: translate(0);
+    height: -webkit-fill-available;
+    height: -moz-available;
+    height: fill-available;
+  }
+
+  .configurator .container {
+    position: relative;
+    display: flex;
+    width: calc(100% - 150px);
+    min-width: 550px;
+    height: calc(100dvh - 1px);
+    min-height: 280px;
+    padding: 17px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    flex: 1;
+  }
+
+  .configurator .container .subcontainer:nth-child(1) {
+    width: 270px;
+    flex: 0 0 270px;
+  }
+
+  .configurator .container .subcontainer:nth-child(3) {
+    width: 50px;
+    flex: 0 0 50px;
+  }
+
+  .configurator .button-x,
+  .configurator .button-m,
+  .configurator .button-l {
+    width: 50px;
+    height: 50px;
+  }
+
+  .configurator .button-selecter,
+  .configurator button.button-color,
+  .configurator button.button-color-skin,
+  .configurator button.button-color-hair {
+    margin: 10px 10px 0 0;
+  }
+
+  .configurator .tab-label {
+    height: 55px;
+  }
+
+  .configurator .wrapper-tabs {
+    height: calc(100% - 40px);
+  }
+
+  .configurator .tab-content {
+    height: calc(100% - 70px);
+    padding: 0 0 10px 10px;
+  }
+
+  .configurator button img {
+    width: 29px;
+  }
+
+  .configurator .button-selecter img {
+    width: 50px;
+  }
+
+  .configurator button span {
+    width: 45px;
+  }
+}
+
+/* @media only screen and (min-device-height:375px) and (max-device-width:375px) and (orientation: landscape) {
+      .configurator{
+      top:calc(50% - 155px);
+    }
+    .configurator .container{
+      max-height: 320px;
+      min-width: 500px;
+      max-width: 500px;
+    }
+  } */
+
+/*---------------*/
+/*--- PORTRAIT --*/
+/*---------------*/
+
+@media only screen and (max-device-width: 899px) and (orientation: portrait) {
+  .configurator {
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    -ms-transform: translate(0);
+    transform: translate(0);
+    height: -webkit-fill-available;
+    height: -moz-available;
+    height: fill-available;
+  }
+
+  .configurator .wrapper {
+    width: 100%;
+    display: flex;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    height: fill-available;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: end;
+  }
+
+  .configurator .container {
+    flex-direction: column-reverse;
+    height: 700px;
+    padding: 20px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .configurator .subcontainer {
+    width: 100% !important;
+    flex: auto !important;
+  }
+
+  .configurator .subcontainer.set {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .configurator .subcontainer.landscape {
+    display: none;
+  }
+
+  .configurator .wrapper-tabs {
+    padding-top: 17px;
+  }
+
+  .configurator .tab-label {
+    height: 55px;
+  }
+
+  .configurator .tab-content {
+    height: calc(100% - 77px);
+    padding: 0 0 10px 10px;
+  }
+
+  .configurator .modules {
+    flex-direction: row;
+  }
+  .configurator .modules .module {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .configurator .module.name {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .configurator .button-x,
+  .configurator .button-m,
+  .configurator .button-l {
+    width: 50px;
+    height: 50px;
+  }
+
+  .configurator .button-selecter,
+  .configurator button.button-color-skin,
+  .configurator button.button-color-hair {
+    margin: 10px 10px 0 0;
+  }
+
+  .configurator button img {
+    width: 29px;
+  }
+
+  .configurator .button-selecter img {
+    width: 50px;
+  }
+
+  .configurator button span {
+    width: 45px;
+  }
+}
+
+@media only screen and (max-device-width: 899px) and (max-device-height: 670px) and (orientation: portrait) {
+  .configurator .container {
+    height: 535px;
+  }
+}
+
+/* @media only screen and (min-device-width:400px) and (max-device-width:800px) and (orientation: portrait){
+    .configurator {
+      left: calc(50% - 200px);
+    }
+    .configurator .container{
+      max-width: 400px;
+    }
+  } */

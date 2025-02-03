@@ -1,0 +1,77 @@
+.settings {
+  opacity: 0.99;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.settings .container1 {
+  background-color: var(--color-sec-1);
+  border: 2px solid var(--color-pri-1);
+  border-radius: var(--modal-border-radius);
+}
+
+.settings .column {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings .title {
+  text-align: center;
+  color: var(--color-pri-1);
+  font-size: var(--font-size-2);
+}
+
+/* Logo desactivado
+  .settings .logo {
+    width: 20%;
+    height: auto;
+    padding-bottom: 20px;
+  } */
+
+.settings .up {
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25),
+    inset 0px 1px 3px rgba(255, 255, 255, 0.25);
+}
+
+.settings .down {
+  box-shadow: inset 0px -5px 15px rgba(0, 0, 0, 0.25),
+    0px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.settings button {
+  width: 100%;
+  height: 40px;
+  background: var(--color-sec-1);
+  border-width: 2px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings .close-btn {
+  color: var(--color-bas-1);
+  background: var(--color-pri-2);
+  font-size: var(--font-size-2);
+}
+
+.settings .reset-btn {
+  color: var(--color-bas-1);
+  font-size: var(--font-size-2);
+}
+
+.settings .sesion-btn {
+  margin-bottom: 0;
+  color: var(--color-bas-1);
+  font-size: var(--font-size-2);
+}
+.settings .options-btn {
+  color: var(--color-bas-1);
+  font-size: var(--font-size-2);
+}

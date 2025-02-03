@@ -1,0 +1,294 @@
+.chat-container {
+  font-family: var(--font-family);
+  position: absolute;
+  top: 65px;
+  right: -1px;
+  width: 101%;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+.chat-container .modal-chat {
+  z-index: 10;
+  /* margin: 0 10px; */
+  border-radius: var(--border-radius);
+  border: 2px solid var(--color-pri-1);
+  transition: var(--animation-properties);
+  background-color: var(--color-sec-1);
+  overflow: hidden;
+}
+
+.chat-container .modal-chat .modal-chat-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
+.chat-area {
+  height: calc(100vh - 220px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 14px;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-container .msn-in {
+  color: var(--color-bas-1);
+  padding: 5px;
+  font-size: var(--font-size);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.chat-container .msn-in:hover {
+  border: 1px solid var(--color-pri-1);
+  border-radius: 10px;
+}
+.chat-container .msn-me:hover {
+  border: none;
+}
+
+.chat-container .msn-me {
+  color: var(--color-pri-1);
+  padding: 5px;
+  font-size: var(--font-size);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-container .msn-in .who-div {
+  color: var(--color-pri-3);
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.chat-container .msn-in .who-me {
+  color: var(--color-pri-1);
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.chat-container .msn-in .who-msn {
+  flex-grow: 1;
+}
+
+/* Estilo para el cuadro chiquito */
+.report-box {
+  padding-left: 10px;
+  display: none;
+}
+
+.report-box {
+  background-color: var(--color-pri-1);
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  left: 0px;
+}
+
+/* Estilo Confirmacion Report Box */
+.report-container {
+  font-family: var(--font-family);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.report-container .confirm-container {
+  position: relative;
+  border: 2px solid var(--color-pri-1);
+  border-radius: var(--border-radius);
+  background-color: var(--color-sec-1);
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.report-container .confirm-container .texto-confirmacion {
+  font-size: var(--font-size);
+  color: white;
+  padding-bottom: 20px;
+}
+.report-container .confirm-container .button-container {
+  display: flex;
+  gap: 30px;
+}
+.report-container .confirm-container button {
+  padding: 7.5px 40px;
+  background-color: var(--color-sec-1);
+  color: white;
+  border-radius: var(--border-radius);
+  /* border: revert */
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25),
+    inset 0px 1px 3px rgba(255, 255, 255, 0.25);
+}
+.report-container .confirm-container .aceptar {
+  background-color: var(--color-pri-2);
+}
+/**/
+
+.chat-container .modal-chat .modal-chat-footer {
+  border-radius: var(--border-radius);
+  background: var(--color-sec-2);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px 15px 17px 15px;
+  padding: 8px;
+  padding-bottom: 1.5%;
+  justify-content: space-between;
+  box-shadow: inset 0px -5px 15px rgba(0, 0, 0, 0.25),
+    0px 1px 2px rgba(255, 255, 255, 0.3);
+}
+.chat-container .modal-chat-footer button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.chat-container .modal-chat-footer input {
+  flex: 1;
+  background-color: var(--color-sec-2);
+  width: 100%;
+  color: var(--color-bas-1);
+  position: relative;
+  border: 0;
+  outline: none;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  padding: 0 10px;
+  width: calc(100% - 20px);
+}
+
+.chat-container .modal-chat-footer button i {
+  z-index: 0;
+  color: var(--color-bas-1);
+  font-size: var(--icon-size);
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.chat-container button:hover i {
+  color: var(--color-pri-1);
+  transition: var(--animation-properties);
+}
+
+@media only screen and (max-device-width: 480px) and (orientation: portrait) {
+  .chat-container {
+    top: 77px;
+  }
+  .chat-area {
+    height: calc(100dvh - 155px);
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+  .chat-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 50px);
+  }
+  .chat-area {
+    height: calc(100dvh - 80px);
+  }
+}
+
+.chat-area::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.chat-area::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+
+.chat-area::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.chat-area::-webkit-scrollbar:increment,
+.chat-area::-webkit-scrollbar-button {
+  display: none;
+}
+
+.chat-area::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  /* border: 2px solid #000000; */
+}
+
+.chat-area::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Alerta - Respuesta correcta y reporte de chat correctamente enviado */
+#snackbarOK {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 2px;
+  position: fixed;
+  z-index: 9999;
+  left: 49%;
+  top: 20%;
+}
+
+#snackbarOK.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbarOK .alert {
+  padding: 20px;
+  background-color: var(--color-pri-1);
+  color: black;
+}
+
+/* Alerta - Respuesta incorrecta. Hubo un error al enviar el reporte del chat */
+#snackbarNOT {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 2px;
+  position: fixed;
+  z-index: 9999;
+  left: 45%;
+  top: 20%;
+}
+
+#snackbarNOT.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbarNOT .alert {
+  padding: 20px;
+  background-color: #ff5656;
+  color: black;
+}

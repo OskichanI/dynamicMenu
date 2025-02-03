@@ -1,0 +1,21 @@
+.menu-item {
+    border: 2px solid var(--color-pri-1);
+    border-radius: var(--border-radius);
+    background-color: var(--color-sec-1);
+    color: var(--color-bas-1);
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: var(--animation-properties);
+  }
+  
+  .menu-item:hover {
+    background-color: var(--color-pri-1);
+    color: #fff;
+  }
+  
+  .menu-item.active {
+    background-color: var(--color-pri-2);
+    color: #fff;
+  }
+  

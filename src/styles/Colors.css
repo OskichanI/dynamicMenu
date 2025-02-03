@@ -1,0 +1,15 @@
+:root {
+  --color-pri-1: #84f213;
+  --color-pri-2: #74ba2e;
+  --color-pri-3: #ffffff;
+
+  --color-sec-1: #1f4f6c;
+  --color-sec-2: #2d2d2d;
+  --color-sec-3: #4e5969;
+
+  --color-bas-1: #ffffff;
+  --color-bas-2: #000000;
+  --color-bas-3: #ff0000;
+
+  --color-sec-2-trans: #101a2895;
+}

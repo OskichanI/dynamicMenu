@@ -1,0 +1,29 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+@import "./styles/Colors.css";
+@import "./styles/Vars.css";
+@import "./styles/Menu.css";
+@import "./styles/Chat.css";
+@import "./styles/Collections.css";
+@import "./styles/Configurator.css";
+@import "./styles/Settings.css";
+
+body {
+  font-family: var(--font-family);
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.menu-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}

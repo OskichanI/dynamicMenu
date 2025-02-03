@@ -1,0 +1,307 @@
+.collections {
+  width: 870px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0.99;
+  z-index: 2;
+}
+
+.collections .container {
+  background-color: var(--color-sec-1);
+  border: 2px solid var(--color-pri-1);
+  border-radius: var(--modal-border-radius);
+  z-index: 0;
+  height: 580px;
+  padding: 35px;
+}
+
+.collections .up {
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25),
+    inset 0px 1px 3px rgba(255, 255, 255, 0.25);
+}
+
+.collections .down {
+  box-shadow: inset 0px -5px 15px rgba(0, 0, 0, 0.25),
+    0px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* TABS */
+.collections .wrapper-tabs {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 35px);
+}
+
+.collections .meta-tab {
+  width: 100px;
+  max-width: 100px;
+  display: block;
+  float: left;
+}
+.collections .meta-tab-switch {
+  display: none;
+}
+.collections .tab-label {
+  position: relative;
+  display: block;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-sec-1);
+  cursor: pointer;
+  margin-top: 2px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25),
+    inset 0px 1px 3px rgba(255, 255, 255, 0.25);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.collections .tab-content1 {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  padding: 0 0 25px 25px;
+  background-color: var(--color-sec-2);
+  min-width: 220px;
+  width: 100%;
+  height: calc(100% - 100px);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  opacity: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.collections .meta-tab-switch:checked + .tab-label {
+  background-color: var(--color-sec-2);
+  margin-top: 3px;
+  box-shadow: inset 10px 10px 15px rgba(0, 0, 0, 0.35),
+    0px -1px 2px rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+
+.collections .meta-tab-switch:checked + label + .tab-content1 {
+  z-index: 2;
+  opacity: 1;
+}
+
+.collections .name input:focus,
+.collections .name input:focus {
+  outline: none;
+}
+
+.collections button {
+  background: var(--color-sec-1);
+  border-width: 0;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.collections .close-btn {
+  height: 50px;
+  width: 50px;
+  min-width: 50px;
+  color: var(--color-bas-1);
+  font-size: var(--font-size-2);
+  float: right;
+}
+
+.collections .button-action {
+  color: var(--color-bas-1);
+  background: var(--color-pri-2);
+  font-size: var(--font-size);
+  padding: 10px 22px;
+}
+
+.collections .button-selecter {
+  width: 95px;
+  height: 95px;
+  float: left;
+  margin: 25px 25px 0 0;
+}
+.collections .button-selecter:nth-child(even) {
+  margin-right: 25px;
+}
+
+.collections .tab-label img {
+  max-width: 40px;
+  opacity: 0.25;
+  height: auto;
+}
+
+.collections .tab-label img:hover {
+  opacity: 0.55;
+}
+
+.collections .button-selecter img {
+  width: 90px;
+  height: auto;
+  opacity: 0.25;
+}
+.collections .meta-tab-switch:checked + .tab-label img {
+  opacity: 1;
+}
+
+.collections .button-selecter:hover img {
+  opacity: 0.5;
+}
+
+.collections .button-selecter img.active {
+  opacity: 1;
+}
+
+.collections button:active {
+  scale: 0.95;
+}
+
+.collections .buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collections .container .buttons-container #applyBto {
+  display: none;
+}
+
+/*-------------------*/
+/*-------------------*/
+/*-- MEDIA QUERIES --*/
+/*-------------------*/
+/*-------------------*/
+
+/*---------------*/
+/*-- LANDSCAPE --*/
+/*---------------*/
+
+/* @media only screen and (min-width:801px) and (max-width:899px) and (orientation: landscape) {
+      .collections{
+      width: 750px;
+      height: 485px;
+    }
+    .collections .container{
+      max-height: 485px;
+    }
+  } */
+
+@media only screen and (max-device-width: 899px) and (orientation: landscape) {
+  .collections {
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    -ms-transform: translate(0);
+    transform: translate(0);
+    height: -webkit-fill-available;
+    height: -moz-available;
+    height: fill-available;
+  }
+
+  .collections .container {
+    width: calc(100% - 150px);
+    min-width: 550px;
+    height: calc(100dvh - 1px);
+    min-height: 280px;
+    padding: 17px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    flex: 1;
+  }
+
+  .collections .wrapper-tabs {
+    height: calc(100% - 40px);
+  }
+
+  .collections .meta-tab {
+    width: 70px;
+    height: 70px;
+  }
+
+  .collections .tab-label img {
+    width: 35px;
+  }
+
+  .collections .tab-content1 {
+    height: calc(100% - 90px);
+  }
+
+  .collections .button-selecter {
+    width: 70px;
+    height: 70px;
+    margin: 17px 17px 0 0;
+  }
+
+  .collections .button-selecter img {
+    width: 70px;
+  }
+}
+
+@media only screen and (max-device-width: 899px) and (orientation: portrait) {
+  .collections {
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    -ms-transform: translate(0);
+    transform: translate(0);
+    height: -webkit-fill-available;
+    height: -moz-available;
+    height: fill-available;
+    align-content: end;
+  }
+  .collections .wrapper {
+    width: 100%;
+    display: flex;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    height: fill-available;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: end;
+  }
+  .collections .container {
+    padding: 20px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 700px;
+  }
+  .collections .wrapper-tabs {
+    height: calc(100% - 40px);
+  }
+  .collections .meta-tab {
+    width: 59px;
+    height: 59px;
+  }
+  .collections .tab-label {
+    height: 59px;
+  }
+  .collections .tab-label img {
+    width: 30px;
+  }
+  .collections .tab-content1 {
+    height: calc(100% - 80px);
+  }
+  .collections .button-selecter {
+    width: 55px;
+    height: 55px;
+    margin: 10px 10px 0 0;
+  }
+  .collections .button-selecter img {
+    width: 55px;
+  }
+  .collections .tab-content1 {
+    padding: 0 0 10px 10px;
+  }
+}
+
+@media only screen and (max-device-width: 899px) and (max-device-height: 670px) and (orientation: portrait) {
+  .collections .container {
+    height: 535px;
+  }
+}
